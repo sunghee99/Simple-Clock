@@ -8,6 +8,7 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.clock.extensions.config
 import com.simplemobiletools.clock.helpers.Converters
+import com.simplemobiletools.clock.helpers.DEFAULT_MAX_ALARM_REMINDER_SECS
 import com.simplemobiletools.clock.interfaces.TimerDao
 import com.simplemobiletools.clock.models.Timer
 import java.util.concurrent.Executors
@@ -52,6 +53,7 @@ abstract class AppDatabase : RoomDatabase() {
                         soundUri = config.timerSoundUri,
                         soundTitle = config.timerSoundTitle,
                         label = config.timerLabel ?: "",
+                        term = config.alarmMaxReminderSecs,
                         createdAt = System.currentTimeMillis(),
                         channelId = config.timerChannelId,
                     )

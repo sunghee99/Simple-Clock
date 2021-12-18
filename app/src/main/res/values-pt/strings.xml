@@ -16,6 +16,7 @@
     <string name="swipe_right_to_dismiss">Deslize à direita para descartar e à esquerda para suspender.</string>
     <string name="sort_by_creation_order">Ordem de criação</string>
     <string name="sort_by_alarm_time">Hora do alarme</string>
+    <string name="range">(0 ~ 900 sec)</string>
 
     <!--Timer-->
     <string name="timers_notification_msg">Temporizadores em execução</string>

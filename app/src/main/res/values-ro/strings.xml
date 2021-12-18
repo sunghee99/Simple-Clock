@@ -16,6 +16,7 @@
     <string name="swipe_right_to_dismiss">Glisează în dreapta pentru a înlătura, sau stânga pentru a amâna.</string>
     <string name="sort_by_creation_order">Ordine de creere</string>
     <string name="sort_by_alarm_time">Ora alarmei</string>
+    <string name="range">(0 ~ 900 sec)</string>
 
     <!--Timer-->
     <string name="timers_notification_msg">Temporizatoarele sunt în funcţiune</string>

@@ -16,6 +16,7 @@
     <string name="swipe_right_to_dismiss">Geser ke kanan untuk mengabaikan, atau ke kiri untuk Menunda.</string>
     <string name="sort_by_creation_order">Creation order</string>
     <string name="sort_by_alarm_time">Alarm time</string>
+    <string name="range">(0 ~ 900 sec)</string>
 
     <!--Timer-->
     <string name="timers_notification_msg">Timers are running</string>

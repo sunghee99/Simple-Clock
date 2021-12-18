@@ -82,11 +82,11 @@ fun Context.getModifiedTimeZoneTitle(id: Int) = getAllTimeZonesModified().firstO
 
 fun Context.createNewAlarm(timeInMinutes: Int, weekDays: Int): Alarm {
     val defaultAlarmSound = getDefaultAlarmSound(RingtoneManager.TYPE_ALARM)
-    return Alarm(0, timeInMinutes, weekDays, false, false, defaultAlarmSound.title, defaultAlarmSound.uri, "")
+    return Alarm(0, timeInMinutes, weekDays, false, false, defaultAlarmSound.title, defaultAlarmSound.uri, "", DEFAULT_MAX_ALARM_REMINDER_SECS )
 }
 
 fun Context.createNewTimer(): Timer {
-    return Timer(null, config.timerSeconds, config.timerState, config.timerVibrate, config.timerSoundUri, config.timerSoundTitle, config.timerLabel ?: "", System.currentTimeMillis(), config.timerChannelId, )
+    return Timer(null, config.timerSeconds, config.timerState, config.timerVibrate, config.timerSoundUri, config.timerSoundTitle, config.timerLabel ?: "", DEFAULT_MAX_ALARM_REMINDER_SECS, System.currentTimeMillis(), config.timerChannelId, )
 }
 
 fun Context.scheduleNextAlarm(alarm: Alarm, showToast: Boolean) {

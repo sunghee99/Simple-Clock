@@ -12,6 +12,7 @@ data class Timer(
     var soundUri: String,
     var soundTitle: String,
     var label: String,
+    var term: Int,
     var createdAt: Long,
     var channelId: String? = null,
 )

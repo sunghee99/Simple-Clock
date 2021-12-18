@@ -60,7 +60,7 @@ class ReminderActivity : SimpleActivity() {
         reminder_title.text = label
         reminder_text.text = if (isAlarmReminder) getFormattedTime(getPassedSeconds(), false, false) else getString(R.string.time_expired)
 
-        val maxDuration = if (isAlarmReminder) config.alarmMaxReminderSecs else config.timerMaxReminderSecs
+        val maxDuration = if (alarm!!.term > 0) alarm!!.term else if (isAlarmReminder) config.alarmMaxReminderSecs else config.timerMaxReminderSecs
         maxReminderDurationHandler.postDelayed({
             finishActivity()
         }, maxDuration * 1000L)

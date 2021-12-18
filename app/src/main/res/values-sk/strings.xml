@@ -16,6 +16,7 @@
     <string name="swipe_right_to_dismiss">Potiahnite vpravo na odstránenie, alebo vľavo na odloženie.</string>
     <string name="sort_by_creation_order">Poradia vytvorenia</string>
     <string name="sort_by_alarm_time">Času budíka</string>
+    <string name="range">(0 ~ 900 sec)</string>
 
     <!--Timer-->
     <string name="timers_notification_msg">Sú spustené časovače</string>

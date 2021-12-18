@@ -1,6 +1,7 @@
 package com.simplemobiletools.clock.dialogs
 
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.media.AudioManager
 import android.media.RingtoneManager
@@ -9,10 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.clock.R
 import com.simplemobiletools.clock.activities.SimpleActivity
 import com.simplemobiletools.clock.extensions.*
-import com.simplemobiletools.clock.helpers.PICK_AUDIO_FILE_INTENT_ID
-import com.simplemobiletools.clock.helpers.TODAY_BIT
-import com.simplemobiletools.clock.helpers.TOMORROW_BIT
-import com.simplemobiletools.clock.helpers.getCurrentDayMinutes
+import com.simplemobiletools.clock.helpers.*
 import com.simplemobiletools.clock.models.Alarm
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.SelectAlarmSoundDialog
@@ -57,6 +55,9 @@ class EditAlarmDialog(val activity: SimpleActivity, val alarm: Alarm, val callba
                 edit_alarm_vibrate.toggle()
                 alarm.vibrate = edit_alarm_vibrate.isChecked
             }
+
+           //edit_alarm_term.colorLeftDrawable(textColor)
+            edit_alarm_term.setText(alarm.term)
 
             edit_alarm_label_image.applyColorFilter(textColor)
             edit_alarm_label.setText(alarm.label)
@@ -120,6 +121,8 @@ class EditAlarmDialog(val activity: SimpleActivity, val alarm: Alarm, val callba
                         }
 
                         alarm.label = view.edit_alarm_label.value
+                        //alarm.term = intent.getIntExtra(view.edit_alarm_term.value, 15)
+                        alarm.term = view.edit_alarm_term.value.toInt()
                         alarm.isEnabled = true
 
                         var alarmId = alarm.id
@@ -146,6 +149,7 @@ class EditAlarmDialog(val activity: SimpleActivity, val alarm: Alarm, val callba
         if (alarm.id == 0) {
             activity.config.alarmLastConfig?.let { lastConfig ->
                 alarm.label = lastConfig.label
+                alarm.term = lastConfig.term
                 alarm.days = lastConfig.days
                 alarm.soundTitle = lastConfig.soundTitle
                 alarm.soundUri = lastConfig.soundUri
